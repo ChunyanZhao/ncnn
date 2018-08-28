@@ -501,6 +501,10 @@ int main(int argc, char** argv)
         {
             fprintf(pp, "%-16s", "ELU");
         }
+        else if (op == "Flatten")
+        {
+            fprintf(pp, "%-16s", "Flatten");
+        }
         else if (op == "Gemm")
         {
             float alpha = get_node_attr_f(node, "alpha", 1.f);
@@ -938,6 +942,10 @@ int main(int argc, char** argv)
         {
             float alpha = get_node_attr_f(node, "alpha", 1.f);
             fprintf(pp, " 0=%f", alpha);
+        }
+        else if (op == "Flatten")
+        {
+            // no-op
         }
         else if (op == "Gemm")
         {
